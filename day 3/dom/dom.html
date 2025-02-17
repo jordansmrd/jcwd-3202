@@ -1,0 +1,29 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+
+    <script>
+      function updateText() {
+        const element = document.getElementById("myElement"); //access element dengan id myElement
+        element.innerText = "helloooo";
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="myElement">Original Text</h1>
+    <div id="container"></div>
+    <button onclick="updateText()">update Text</button>
+  </body>
+  <script>
+    document.getElementById("myElement").innerText = "doorrrr";
+    document.getElementById("container").innerHTML = "<p> ini paragraf </p>"; //fill p element inside div with dom manupulation
+  </script>
+</html>
+
+//npx create-next-app@latest //typescript yes // eslint yes //tailwind no // app
+router yes // turbo pack no // import alias yes // yes
