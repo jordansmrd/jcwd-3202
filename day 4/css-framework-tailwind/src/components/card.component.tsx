@@ -43,15 +43,17 @@ export default function CardComponent(props: TCard) {
             <Image src={Share} alt="share" className="w-5 h-5" />
           </div>
 
+          {/* image post section */}
           <div>
             <Image src={Bookmark} alt="bookmark" className="w-5 h-5" />
           </div>
         </div>
 
         {/* caption section */}
-        <div className="flex">
-          <h4> {props.username}</h4>
-          <span> {props.caption}</span>
+        <div className="flex pt-2">
+          <span className="text-left">
+            <b>{props.username}</b> {props.caption}
+          </span>
         </div>
       </div>
     </div>
