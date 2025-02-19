@@ -1,101 +1,76 @@
-import Image from "next/image";
+/** @format */
 
+import Image from "next/image";
+import Bg from "@/../public/bg.png";
+import Shape from "@/../public/Combined Shape.svg";
+import CardComponent from "@/components/card.component";
+import { CheckComponent } from "@/components/Icon.component";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <center>
+        <div className="w-full max-w-[1440px] min-h-screen bg-[#FAFAFA]">
+          <div className=" relative">
+            {/* background image section */}
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              src={Bg}
+              alt=""
+              className="max-w-[1440px] w-full xl:max-h-[300px] max-h-[30vw]  object-cover z-0 "
+            ></Image>
+
+            {/* todo section */}
+            <div
+              className="z-10  max-w-[1440px] w-full xl:max-h-[300px] max-h-[30vw] absolute top-0 h-screen"
+              style={{
+                background:
+                  "linear-gradient(225deg, rgba(85, 150, 255, 0.6) 0%, rgba(172, 45, 235, 0.6) 100%)",
+              }}
+            >
+              <div className="max-w-[541px] w-full relative top-4 lg:top-[70px] px-3">
+                <div className=" text-white w-full h-12 text-[20px] lg:text-[40px] tracking-[15px] font-bold flex justify-between ">
+                  <span>TODO</span>
+                  <Image src={Shape} alt="" />
+                </div>
+
+                <div className="w-full rounded-[5px] bg-white flex h-16 items-center p-4 gap-3 mt-2 lg:mt-6 border">
+                  <CheckComponent />
+                  <input
+                    type="text"
+                    className="w-full rounded-[5px] outline-none  "
+                    placeholder="Create a new todo..."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* section todo list  */}
+          <div className="max-w-[541px] w-full rounded-[5px] top-12  lg:-top-14 z-20 relative bg-white shadow-xl text-sm">
+            {[...new Array(100)].map((_) => (
+              <CardComponent />
+            ))}
+
+            <div className="w-full rounded-[5px] bg-white flex justify-between h-16 items-center gap-3 lg:mt-6 py-5 px-6 border-b border-[#E3E4F1]">
+              <span className="  text-left  text-[#9495A5] w-[80px]">
+                5 items left
+              </span>
+
+              <div className="flex gap-2 font-bold">
+                <span className="hover:text-[#3A7CFD] text-[#9495A5] cursor-pointer">
+                  All
+                </span>
+                <span className="text-[#494C6B] cursor-pointer">Active</span>
+                <span className="text-[#9495A5] hover:text-[#3A7CFD] cursor-pointer">
+                  Completed
+                </span>
+              </div>
+              <span className="text-[#494C6B] cursor-pointer">
+                Clear Completed
+              </span>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </center>
+    </>
   );
 }
