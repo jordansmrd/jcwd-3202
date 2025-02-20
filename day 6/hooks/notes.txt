@@ -1,0 +1,12 @@
+lifecycle method // siklus hidup
+
+istilah ini berasal dari class component
+function yang ditrigger sesuai dengan siklus hidup component
+
+componentWillMount // component akan dipasang
+
+componentDidMount // component berhasil dipasang
+
+componentDidUpdate // component berhasil berubah
+
+componentWillUnmount // component akan dilepas
