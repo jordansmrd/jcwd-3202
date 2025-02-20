@@ -3,15 +3,13 @@
 import { actionType, reducer } from "@/reducers/count.reducer";
 import React, { useReducer } from "react";
 
-type Props = {};
-
 //state, useeffect
 
 //useMemo, useCallback
 
 //useReducer
 
-export default function Page({}: Props) {
+export default function Page() {
   const [state, dispatch] = useReducer(reducer, { count: 0 });
 
   //dispatch digunakan untuk memanggil action
