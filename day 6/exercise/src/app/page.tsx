@@ -5,7 +5,7 @@ import Bg from "@/../public/bg.png";
 import Shape from "@/../public/Combined Shape.svg";
 import CardComponent from "@/components/card.component";
 import { CheckComponent } from "@/components/Icon.component";
-import { FormEvent, useCallback, useState } from "react";
+import { FormEvent, useState } from "react";
 import { ITodo } from "./interfaces/todo.interface";
 import { todos as data } from "@/json/data.json";
 export default function Home() {
